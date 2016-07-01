@@ -60,3 +60,11 @@ Wraps up our tour through the world of Backbone.js development.
 #Chapter 18 - Appendix
 Returns to our design pattern discussion by contrasting MVC with the Model-View-Presenter (MVP) pattern and examines how Backbone.js relates to both. A walkthrough of writing a Backbone-like library from scratch and other topics are also covered.
 
+__
+
+References: Essential JS Design Patterns
+By Addy Osmani (@addyosmani)
+
+See https://addyosmani.com/resources/essentialjsdesignpatterns/book/
+
+__
