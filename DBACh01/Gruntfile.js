@@ -96,7 +96,8 @@ module.exports = function(grunt) {
 	    'processhtml': {
 	        build: {
 	            files: {
-	                'dist/demo.html' : ['src/demo.html']
+	                'dist/demo.html' : ['src/demo.html'],
+	                'dist/todo.html' : ['src/todo.html']
 	            }
 	        }    	
 	    }  	
