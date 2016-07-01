@@ -18,6 +18,11 @@ module.exports = function(grunt) {
 				src: ['src/**/*.js'],
 				dest: 'dist/js/<%= pkg.name %>.js'
 			},
+			jquery: {
+			    files: {
+			      'dist/vendor/jquery/jquery.js': ['bower_components/jquery/dist/jquery.js']
+			    }
+			},			
 			backbone: {
 			    files: {
 			      'dist/vendor/backbone/backbone.js': ['bower_components/backbone/backbone.js']
