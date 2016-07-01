@@ -4,7 +4,7 @@
   "description": "Developing Backbone Applications, Chapter 1",
   "main": "index.js",
   "scripts": {
-    "pre-install": "npm install -g grunt-cli",    
+    "pre-install": "npm install -g grunt-cli",
     "post-install": "bower install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "grunt": "^1.0.1",
+    "grunt-bower-install-simple": "^1.2.3",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-qunit": "^1.2.0",
