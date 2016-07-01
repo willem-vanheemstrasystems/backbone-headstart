@@ -6,6 +6,8 @@ By Addy Osmani (@addyosmani)
 
 See https://addyosmani.com/backbone-fundamentals/
 
+Uses: https://github.com/jeromegn/Backbone.localStorage
+
 #Chapter 01 Prelude
 Introduces Backbone.
 
