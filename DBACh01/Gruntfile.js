@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				src: ['src/**/*.js'],
-				dest: 'dist/<%= pkg.name %>.js'
+				dest: 'dist/js/<%= pkg.name %>.js'
 			},
 			backbone: {
 			    files: {
@@ -38,9 +38,9 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				// Minify all files produced in the concat task 
-				// and safe them in the dist/ directory. 
+				// and safe them in the dist/js/ directory. 
 				files: {
-					'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+					'dist/js/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
 				}
 			}
 		},
