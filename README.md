@@ -11,6 +11,15 @@ Uses: https://github.com/jeromegn/Backbone.localStorage
 #Chapter 01 Prelude
 Introduces Backbone.
 
+To run the code, do the following:
+- Inside the DBACh01 project directory run: npm install
+- Run: bower install
+- Run: grunt bower
+- Run: grunt process-html
+- Run: grunt 
+- Run: npm start
+- Open a web browser at: http://localhost:4711 (You should be greeted with 'Hello World!')
+
 #Chapter 2 - Fundamentals
 Traces the history of the MVC design pattern and introduces how it is implemented by Backbone.js and other JavaScript frameworks.
 
