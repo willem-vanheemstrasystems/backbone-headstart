@@ -41,6 +41,15 @@ To run the code, do the following:
 #Chapter 5 - Exercise 2: Book Library - Your First RESTful Backbone.js App
 Walks you through development of a Book Library application which persists its model to a server using a REST API.
 
+To run the code, do the following:
+- Inside the DBACh05 project directory run: npm install
+- Run: bower install
+- Run: grunt bower
+- Run: grunt process-html
+- Run: grunt 
+- Run: npm start
+- Open a web browser at: http://localhost:4712/library.html
+
 #Chapter 6 - Backbone Extensions
 Describes Backbone.Marionette and Thorax, two extension frameworks which add features to Backbone.js that are useful for developing large-scale applications.
 
