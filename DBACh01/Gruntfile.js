@@ -93,11 +93,10 @@ module.exports = function(grunt) {
 	        }                	
 	    },
 		// Configure the process html plugin
-	    'processhtml': {
+	    processhtml: {
 	        build: {
 	            files: {
-	                'dist/demo.html' : ['src/demo.html'],
-	                'dist/todo.html' : ['src/todo.html']
+	                'dist/index.html' : ['src/index.html']
 	            }
 	        }    	
 	    }  	
