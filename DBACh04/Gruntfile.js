@@ -98,7 +98,13 @@ module.exports = function(grunt) {
 	            files: {
 	                'dist/todo.html' : ['src/todo.html'],
 	                'dist/css/todo.css' : ['src/css/todo.css'], // temp solution
-	                'dist/libs/backbone.localStorage.js' : ['libs/backbone.localStorage.js'] // temp solution
+	                'dist/libs/backbone.localStorage.js' : ['libs/backbone.localStorage.js'], // temp solution
+	                'dist/js/app.js' : ['src/js/app.js'], // temp solution
+	                'dist/js/views/app.js' : ['src/js/views/app.js'], // temp solution
+	                'dist/js/views/todos.js' : ['src/js/views/todos.js'], // temp solution
+	                'dist/js/models/todo.js' : ['src/js/models/todo.js'], // temp solution
+	                'dist/js/collections/todos.js' : ['src/js/collections/todos.js'], // temp solution
+	                'dist/js/routers/router.js' : ['src/js/routers/router.js'] // temp solution
 	            }
 	        }    	
 	    }  	
