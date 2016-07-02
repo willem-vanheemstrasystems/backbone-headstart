@@ -29,6 +29,15 @@ Covers the major features of the Backbone.js core and the technologies and techn
 #Chapter 4 - Exercise 1: Todos - Your First Backbone.js App
 Takes you step-by-step through development of a simple client-side Todo List application.
 
+To run the code, do the following:
+- Inside the DBACh04 project directory run: npm install
+- Run: bower install
+- Run: grunt bower
+- Run: grunt process-html
+- Run: grunt 
+- Run: npm start
+- Open a web browser at: http://localhost:4711/todo.html
+
 #Chapter 5 - Exercise 2: Book Library - Your First RESTful Backbone.js App
 Walks you through development of a Book Library application which persists its model to a server using a REST API.
 

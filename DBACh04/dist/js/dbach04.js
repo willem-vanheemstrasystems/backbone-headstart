@@ -1,71 +1,4 @@
-;;// Define a Todo Model
-var Todo = Backbone.Model.extend({
-  // Default todo attribute values
-  defaults: {
-    title: '',
-    completed: false
-  }
-});
-
-// Instantiate the Todo Model with a title, with the completed attribute
-// defaulting to false
-var myTodo = new Todo({
-  title: 'Check attributes property of the logged models in the console.'
-});
-
-//Define a Todo View
-var TodoView = Backbone.View.extend({
-
-  tagName:  'li',
-
-  // Cache the template function for a single item.
-  todoTpl: _.template( $('#item-template').html() ),
-
-  events: {
-    'dblclick label': 'edit',
-    'keypress .edit': 'updateOnEnter',
-    'blur .edit':   'close'
-  },
-
-  // Called when the view is first created
-  initialize: function() {
-    this.$el = $('#todo');
-    // Later we'll look at:
-    // this.listenTo(someCollection, 'all', this.render);
-    // but you can actually run this example right now by
-    // calling todoView.render();
-  },
-
-  // Re-render the titles of the todo item.
-  render: function() {
-    this.$el.html( this.todoTpl( this.model.attributes ) );
-    // $el here is a reference to the jQuery element
-    // associated with the view, todoTpl is a reference
-    // to an Underscore template and model.attributes
-    // contains the attributes of the model.
-    // Altogether, the statement is replacing the HTML of
-    // a DOM element with the result of instantiating a
-    // template with the model's attributes.
-    this.input = this.$('.edit');
-    return this;
-  },
-
-  edit: function() {
-    // executed when todo label is double clicked
-  },
-
-  close: function() {
-    // executed when todo loses focus
-  },
-
-  updateOnEnter: function( e ) {
-    // executed on each keypress when in todo edit mode,
-    // but we'll wait for enter to get in action
-  }
-});
-
-// create a view for a todo
-var todoView = new TodoView({model: myTodo});;/**
+;;/**
  * Backbone localStorage Adapter
  * Version 1.1.16
  *
@@ -91,12 +24,12 @@ var todoView = new TodoView({model: myTodo});;/**
 // Generate four random hex digits.
 function S4() {
    return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
-};
+}
 
 // Generate a pseudo-GUID by concatenating random hexadecimal.
 function guid() {
    return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
-};
+}
 
 function isObject(item) {
   return item === Object(item);
@@ -109,12 +42,12 @@ function contains(array, item) {
 }
 
 function extend(obj, props) {
-  for (var key in props) obj[key] = props[key]
+  for (var key in props) obj[key] = props[key];
   return obj;
 }
 
 function result(object, property) {
-    if (object == null) return void 0;
+    if (object === null) return void 0;
     var value = object[property];
     return (typeof value === 'function') ? object[property]() : value;
 }
@@ -124,7 +57,7 @@ function result(object, property) {
 // window.Store is deprectated, use Backbone.LocalStorage instead
 Backbone.LocalStorage = window.Store = function(name, serializer) {
   if( !this.localStorage ) {
-    throw "Backbone.localStorage: Environment does not support localStorage."
+    throw "Backbone.localStorage: Environment does not support localStorage.";
   }
   this.name = name;
   this.serializer = serializer || {
@@ -182,7 +115,7 @@ extend(Backbone.LocalStorage.prototype, {
     for (var i = 0, id, data; i < this.records.length; i++) {
       id = this.records[i];
       data = this.serializer.deserialize(this.localStorage().getItem(this._itemName(id)));
-      if (data != null) result.push(data);
+      if (data !== null) result.push(data);
     }
     return result;
   },
@@ -249,7 +182,7 @@ Backbone.LocalStorage.sync = window.Store.sync = Backbone.localSync = function(m
 
     switch (method) {
       case "read":
-        resp = model.id != undefined ? store.find(model) : store.findAll();
+        resp = model.id !== undefined ? store.find(model) : store.findAll();
         break;
       case "create":
         resp = store.create(model);
@@ -323,4 +256,27 @@ Backbone.sync = function(method, model, options) {
 
 return Backbone.LocalStorage;
 }));
-;;;;
+;// js/models/todo.js
+
+var app = app || {};
+
+// Todo Model
+// ----------
+// Our basic **Todo** model has `title` and `completed` attributes.
+
+app.Todo = Backbone.Model.extend({
+
+// Default attributes ensure that each todo created has `title` and `completed` keys.
+defaults: {
+  title: '',
+  completed: false
+},
+
+// Toggle the `completed` state of this todo item.
+toggle: function() {
+  this.save({
+    completed: !this.get('completed')
+      });
+    }
+
+});;;;
