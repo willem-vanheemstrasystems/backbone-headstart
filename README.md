@@ -44,9 +44,7 @@ Walks you through development of a Book Library application which persists its m
 To run the code, do the following:
 - Inside the DBACh05 project directory run: npm install
 - Run: bower install
-- Run: grunt bower
-- Run: grunt process-html
-- Run: grunt 
+- Run: grunt distribute
 - Run: npm start
 - Open a web browser at: http://localhost:4712/library.html
 
