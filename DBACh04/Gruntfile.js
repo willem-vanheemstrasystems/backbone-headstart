@@ -97,7 +97,8 @@ module.exports = function(grunt) {
 	        build: {
 	            files: {
 	                'dist/todo.html' : ['src/todo.html'],
-	                'dist/css/todo.css' : ['src/css/todo.css'] // temp solution
+	                'dist/css/todo.css' : ['src/css/todo.css'], // temp solution
+	                'dist/libs/backbone.localStorage.js' : ['libs/backbone.localStorage.js'] // temp solution
 	            }
 	        }    	
 	    }  	
