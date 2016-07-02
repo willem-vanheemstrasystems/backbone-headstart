@@ -2,11 +2,12 @@
   "name": "dbach01",
   "version": "1.0.0",
   "description": "Developing Backbone Applications, Chapter 1",
-  "main": "index.js",
+  "main": "servers/server.js",
   "scripts": {
     "pre-install": "npm install -g grunt-cli",
     "post-install": "bower install",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node servers/server.js"
   },
   "author": "",
   "license": "MIT",
