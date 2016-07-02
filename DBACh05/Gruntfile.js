@@ -96,21 +96,49 @@ module.exports = function(grunt) {
 	    processhtml: {
 	        build: {
 	            files: {
-	                'dist/todo.html' : ['src/todo.html'],
-	                'dist/css/todo.css' : ['src/css/todo.css'], // temp solution
+	                'dist/library.html' : ['src/library.html'],
+	                'dist/css/library.css' : ['src/css/library.css'], // temp solution
 	                'dist/libs/backbone.localStorage.js' : ['libs/backbone.localStorage.js'], // temp solution
 	                'dist/js/app.js' : ['src/js/app.js'], // temp solution
-	                'dist/js/views/app.js' : ['src/js/views/app.js'], // temp solution
-	                'dist/js/views/todos.js' : ['src/js/views/todos.js'], // temp solution
-	                'dist/js/models/todo.js' : ['src/js/models/todo.js'], // temp solution
-	                'dist/js/collections/todos.js' : ['src/js/collections/todos.js'], // temp solution
-	                'dist/js/routers/router.js' : ['src/js/routers/router.js'] // temp solution
+	                'dist/js/views/book.js' : ['src/js/views/book.js'], // temp solution
+	                'dist/js/views/library.js' : ['src/js/views/library.js'], // temp solution
+	                'dist/js/models/book.js' : ['src/js/models/book.js'], // temp solution
+	                'dist/js/collections/library.js' : ['src/js/collections/library.js'] // temp solution
 	            }
 	        }    	
-	    }  	
+	    }, 
+	    // Configure the copy plugin
+	    copy: {
+	      options : {
+	        processContentExclude: [
+	    	   '**/*.{png,gif,jpg,ico,psd}'
+	    	  ]
+	      },
+	      prod : {
+            files : [
+      	      {
+	    	    expand : true,
+	    	    cwd : 'src/img/',
+	    	    src : [
+	    	      '**',
+	    	      '!junk/**'
+	    	    ],
+	    	    dest : 'dist/img/'
+	    	  }/*,
+	    	  {
+	    	    filter : 'isFile',
+	    	    expand : true,
+	    	    cwd : '.',
+	    	    src : ['index.html'],
+	            dest : '/dist/'
+	    	  }*/
+	        ]
+	      }
+	    }
 	});
 	// Load in the Grunt plugins.
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-uglify');	
 	grunt.loadNpmTasks('grunt-contrib-qunit');	
 	grunt.loadNpmTasks('grunt-contrib-jshint');	
@@ -120,12 +148,16 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-processhtml');
 	// Setup the tasks to run,
 	// most importantly the default task.
+	// To run the process images task, run: grunt process-images
+	grunt.registerTask('process-images', ['copy']);
 	// To run the test task, run: grunt test
 	grunt.registerTask('test', ['jshint', 'qunit']);
 	// To run the bower task, run: grunt bower
 	grunt.registerTask('bower', ['bower-install-simple', 'concat']);
 	// To run the process html task, run : grunt process-html
 	grunt.registerTask('process-html', ['processhtml', 'concat']);
+	// To run the distribute task, run: grunt distribute
+	grunt.registerTask('distribute', ['bower', 'process-images', 'process-html']);
 	// To run the default task, run: grunt
 	grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
 };
