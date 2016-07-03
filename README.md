@@ -48,6 +48,27 @@ To run the code, do the following:
 - Run: npm start
 - Open a web browser at: http://localhost:4712/library.html
 
+To install and run MongoDB, follow the instructions:
+https://docs.mongodb.com/manual/installation/
+
+Sample of C:\\Users\\user\\MongoDB\\mongodb.config file (in YAML), using spaces instead of tabs (!):
+
+storage:
+  dbPath:"C:\\Users\\user\\MongoDB\\data"
+
+Note: On Windows, one needs to use \\ instead of \.
+
+Add the path to mongod.exe (inside C:\\Program Files\\MongoDB\\Server\\3.2\\bin) to Windows Environment Variable Path.
+
+Then start MongoDB as:
+
+mongod --config C:\\Users\\user\\MongoDB\\mongodb.config
+
+Download and install the MongoDB GUI 'MongoChef' from http://3t.io/mongochef
+
+Learn MongoChef: 
+https://www.youtube.com/channel/UCLYMAj4tAAh5iVDNHXpDm3Q
+
 #Chapter 6 - Backbone Extensions
 Describes Backbone.Marionette and Thorax, two extension frameworks which add features to Backbone.js that are useful for developing large-scale applications.
 
