@@ -7,7 +7,8 @@ var application_root = __dirname,
     path = require( 'path' ), //Utilities for dealing with file paths
     mongoose = require( 'mongoose' ); //MongoDB integration
 
-//Connect to database
+//Connect to database, using global Promise library
+mongoose.Promise = global.Promise;
 mongoose.connect( 'mongodb://localhost/library_database' );
 
 //Schemas

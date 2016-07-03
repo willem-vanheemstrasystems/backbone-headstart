@@ -97,9 +97,6 @@ module.exports = function(grunt) {
 	        build: {
 	            files: {
 	                'dist/library.html' : ['src/library.html'],
-	                //'dist/css/library.css' : ['src/css/library.css'], // temp solution
-	                //'dist/css/cupertine/jquery-ui.css' : ['src/css/cupertino/jquery-ui.css'], // temp solution
-	                //'dist/css/cupertino/theme.css' : ['src/css/cupertino/theme.css'], // temp solution
 	                'dist/libs/backbone.localStorage.js' : ['libs/backbone.localStorage.js'], // temp solution
 	                'dist/libs/jquery-dateFormat.js' : ['libs/jquery-dateFormat.js'], // temp solution
 	                'dist/libs/jquery-ui-1.11.4.custom/jquery-ui.js' : ['libs/jquery-ui-1.11.4.custom/jquery-ui.js'], // temp solution
