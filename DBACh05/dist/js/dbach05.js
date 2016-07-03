@@ -11,13 +11,15 @@ $(function() {
         { title: 'Eloquent JavaScript', author: 'Marijn Haverbeke', releaseDate: '2011', keywords: 'JavaScript Programming' }
     ];
 
-    new app.LibraryView( books );
+    //OLD new app.LibraryView( books );
+    new app.LibraryView();
 });;// js/collections/library.js
 
 var app = app || {};
 
 app.Library = Backbone.Collection.extend({
-    model: app.Book
+    model: app.Book,
+    url: '/api/books'
 });;// js/models/book.js
 
 var app = app || {};
@@ -64,10 +66,13 @@ var app = app || {};
 app.LibraryView = Backbone.View.extend({
     el: '#books',
 
-    initialize: function( initialBooks ) {
-        this.collection = new app.Library( initialBooks );
+    initialize: function() {
+    	//OLD this.collection = new app.Library( initialBooks );
+        this.collection = new app.Library();
+        this.collection.fetch({reset: true});
         this.render();
         this.listenTo( this.collection, 'add', this.renderBook );
+        this.listenTo( this.collection, 'reset', this.render );
     },
 
     // render library by rendering each book in its collection

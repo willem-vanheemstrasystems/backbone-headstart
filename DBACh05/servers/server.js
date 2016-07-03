@@ -11,10 +11,16 @@ var application_root = __dirname,
 mongoose.connect( 'mongodb://localhost/library_database' );
 
 //Schemas
+var Keywords = new mongoose.Schema({
+    keyword: String
+});
+// Note: To add a sub schema to an existing schema, 
+// use brackets notation
 var Book = new mongoose.Schema({
     title: String,
     author: String,
-    releaseDate: Date
+    releaseDate: Date,
+    keywords: [ Keywords ]
 });
 
 //Models
@@ -98,9 +104,93 @@ if('production' == App.settings.env){
   
 }
 
+/** 
+ * API
+ * url             HTTP Method  Operation
+ * /api/books      GET          Get an array of all books
+ * /api/books/:id  GET          Get the book with id of :id
+ * /api/books      POST         Add a new book and return the book with an id attribute added
+ * /api/books/:id  PUT          Update the book with id of :id
+ * /api/books/:id  DELETE       Delete the book with id of :id
+ */
+
 //Routes
 App.get( '/api', function( request, response ) {
     response.send( 'Library API is running' );
+});
+
+//Get a list of all books
+App.get( '/api/books', function( request, response ) {
+    return BookModel.find( function( err, books ) {
+        if( !err ) {
+            return response.send( books );
+        } else {
+            return console.log( err );
+        }
+    });
+});
+
+//Get a single book by id
+App.get( '/api/books/:id', function( request, response ) {
+    return BookModel.findById( request.params.id, function( err, book ) {
+        if( !err ) {
+            return response.send( book );
+        } else {
+            return console.log( err );
+        }
+    });
+});
+
+//Insert a new book
+App.post( '/api/books', function( request, response ) {
+    var book = new BookModel({
+        title: request.body.title,
+        author: request.body.author,
+        releaseDate: request.body.releaseDate,
+        keywords: request.body.keywords
+    });
+    book.save( function( err ) {
+        if( !err ) {
+            console.log( 'created' );
+            return response.send( book );
+        } else {
+            return console.log( err );
+        }
+    });
+});
+
+//Update a book
+App.put( '/api/books/:id', function( request, response ) {
+    console.log( 'Updating book ' + request.body.title );
+    return BookModel.findById( request.params.id, function( err, book ) {
+        book.title = request.body.title;
+        book.author = request.body.author;
+        book.releaseDate = request.body.releaseDate;
+        book.keywords = request.body.keywords;
+        return book.save( function( err ) {
+            if( !err ) {
+                console.log( 'book updated' );
+            } else {
+                console.log( err );
+            }
+            return response.send( book );
+        });
+    });
+});
+
+//Delete a book
+App.delete( '/api/books/:id', function( request, response ) {
+    console.log( 'Deleting book with id: ' + request.params.id );
+    return BookModel.findById( request.params.id, function( err, book ) {
+        return book.remove( function( err ) {
+            if( !err ) {
+                console.log( 'Book removed' );
+                return response.send( '' );
+            } else {
+                console.log( err );
+            }
+        });
+    });
 });
 
 //Start server
