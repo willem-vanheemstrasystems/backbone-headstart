@@ -97,9 +97,12 @@ module.exports = function(grunt) {
 	        build: {
 	            files: {
 	                'dist/library.html' : ['src/library.html'],
-	                'dist/css/library.css' : ['src/css/library.css'], // temp solution
+	                //'dist/css/library.css' : ['src/css/library.css'], // temp solution
+	                //'dist/css/cupertine/jquery-ui.css' : ['src/css/cupertino/jquery-ui.css'], // temp solution
+	                //'dist/css/cupertino/theme.css' : ['src/css/cupertino/theme.css'], // temp solution
 	                'dist/libs/backbone.localStorage.js' : ['libs/backbone.localStorage.js'], // temp solution
 	                'dist/libs/jquery-dateFormat.js' : ['libs/jquery-dateFormat.js'], // temp solution
+	                'dist/libs/jquery-ui-1.11.4.custom/jquery-ui.js' : ['libs/jquery-ui-1.11.4.custom/jquery-ui.js'], // temp solution
 	                'dist/js/app.js' : ['src/js/app.js'], // temp solution
 	                'dist/js/views/book.js' : ['src/js/views/book.js'], // temp solution
 	                'dist/js/views/library.js' : ['src/js/views/library.js'], // temp solution
@@ -125,7 +128,15 @@ module.exports = function(grunt) {
 	    	      '!junk/**'
 	    	    ],
 	    	    dest : 'dist/img/'
-	    	  }/*,
+	    	  },
+	    	  {
+		    	expand : true,
+		    	cwd : 'src/css/',
+		    	src : [
+		    	  '**'
+		    	],
+		    	dest : 'dist/css/'
+		      }/*,
 	    	  {
 	    	    filter : 'isFile',
 	    	    expand : true,
