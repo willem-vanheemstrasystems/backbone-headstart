@@ -72,6 +72,8 @@ https://www.youtube.com/channel/UCLYMAj4tAAh5iVDNHXpDm3Q
 #Chapter 6 - Backbone Extensions
 Describes Backbone.Marionette and Thorax, two extension frameworks which add features to Backbone.js that are useful for developing large-scale applications.
 
+Revisits the Todo Application, using Marionette's Regions.
+
 #Chapter 7 - Common Problems and Solutions
 Reviews common issues you may encounter when using Backbone.js and ways of addressing them.
 
