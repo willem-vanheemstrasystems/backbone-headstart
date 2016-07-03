@@ -99,6 +99,7 @@ module.exports = function(grunt) {
 	                'dist/library.html' : ['src/library.html'],
 	                'dist/css/library.css' : ['src/css/library.css'], // temp solution
 	                'dist/libs/backbone.localStorage.js' : ['libs/backbone.localStorage.js'], // temp solution
+	                'dist/libs/jquery-dateFormat.js' : ['libs/jquery-dateFormat.js'], // temp solution
 	                'dist/js/app.js' : ['src/js/app.js'], // temp solution
 	                'dist/js/views/book.js' : ['src/js/views/book.js'], // temp solution
 	                'dist/js/views/library.js' : ['src/js/views/library.js'], // temp solution
