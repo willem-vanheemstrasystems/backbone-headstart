@@ -97,14 +97,21 @@ module.exports = function(grunt) {
 	        build: {
 	            files: {
 	                'dist/library.html' : ['src/library.html'],
+	                'dist/todo.html' : ['src/todo.html'],
 	                'dist/libs/backbone.localStorage.js' : ['libs/backbone.localStorage.js'], // temp solution
 	                'dist/libs/jquery-dateFormat.js' : ['libs/jquery-dateFormat.js'], // temp solution
 	                'dist/libs/jquery-ui-1.11.4.custom/jquery-ui.js' : ['libs/jquery-ui-1.11.4.custom/jquery-ui.js'], // temp solution
-	                'dist/js/app.js' : ['src/js/app.js'], // temp solution
+	                'dist/js/library_app.js' : ['src/js/library_app.js'], // temp solution
+	                'dist/js/todo_app.js' : ['src/js/todo_app.js'], // temp solution
 	                'dist/js/views/book.js' : ['src/js/views/book.js'], // temp solution
 	                'dist/js/views/library.js' : ['src/js/views/library.js'], // temp solution
+	                'dist/js/views/todo_app.js' : ['src/js/views/todo_app.js'], // temp solution
+	                'dist/js/views/todo.js' : ['src/js/views/todo.js'], // temp solution
+	                'dist/js/routers/todo_router.js' : ['src/js/routers/todo_router.js'], // temp solution
 	                'dist/js/models/book.js' : ['src/js/models/book.js'], // temp solution
-	                'dist/js/collections/library.js' : ['src/js/collections/library.js'] // temp solution
+	                'dist/js/models/todo.js' : ['src/js/models/todo.js'], // temp solution
+	                'dist/js/collections/library.js' : ['src/js/collections/library.js'], // temp solution
+	                'dist/js/collections/todos.js' : ['src/js/collections/todos.js'] // temp solution
 	            }
 	        }    	
 	    }, 

@@ -1,4 +1,4 @@
-// js/app.js
+// js/library_app.js
 
 var app = app || {};
 
