@@ -1,0 +1,35 @@
+{
+  "name": "dbach06",
+  "version": "1.0.0",
+  "description": "Developing Backbone Applications, Chapter 6",
+  "main": "servers/server.js",
+  "scripts": {
+    "pre-install": "npm install -g grunt-cli",
+    "post-install": "bower install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node servers/server.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "bower": "^1.7.9",
+    "errorhandler": "^1.4.3",
+    "express": "^4.14.0",
+    "method-override": "^2.3.6",
+    "mongoose": "^4.5.3",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-bower-install-simple": "^1.2.3",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-qunit": "^1.2.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-processhtml": "^0.4.0",
+    "qunitjs": "^2.0.0"
+  }
+}

@@ -72,7 +72,14 @@ https://www.youtube.com/channel/UCLYMAj4tAAh5iVDNHXpDm3Q
 #Chapter 6 - Backbone Extensions
 Describes Backbone.Marionette and Thorax, two extension frameworks which add features to Backbone.js that are useful for developing large-scale applications.
 
-Revisits the Todo Application, using Marionette's Regions.
+Revisits the Todo Application of Chapter 4, using Marionette's Regions.
+
+To run the code, do the following:
+- Inside the DBACh06 project directory run: npm install
+- Run: bower install
+- Run: grunt distribute
+- Run: npm start
+- Open a web browser at: http://localhost:4712/library.html
 
 #Chapter 7 - Common Problems and Solutions
 Reviews common issues you may encounter when using Backbone.js and ways of addressing them.
