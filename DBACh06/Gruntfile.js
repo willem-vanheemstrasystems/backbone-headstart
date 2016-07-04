@@ -20,7 +20,7 @@ module.exports = function(grunt) {
 			},
 			jquery: {
 			    files: {
-			      'dist/vendor/jquery/jquery.js': ['bower_components/jquery/dist/jquery.js']
+			      'dist/vendor/jquery/jquery.js': ['bower_components/jquery/jquery.js']
 			    }
 			},			
 			backbone: {
@@ -31,6 +31,11 @@ module.exports = function(grunt) {
 			underscore: {
 			    files: {
 			      'dist/vendor/underscore/underscore.js': ['bower_components/underscore/underscore.js']
+			    }
+			},
+			lodash: {
+			    files: {
+			      'dist/vendor/lodash/lodash.js': ['bower_components/lodash/lodash.js']
 			    }
 			}		
 		},
@@ -58,7 +63,7 @@ module.exports = function(grunt) {
 		// which checks the syntax of the JavaScript 
 		// for errors or poor formatting.
 		jshint: {
-			files: ['gruntfile.js', 'src/**/*.js', 'test/**/*.js'],
+			files: ['Gruntfile.js', 'src/**/*.js', 'test/**/*.js', '!src/js/ie.js'],
 			options: {
 				// Options here to override JSHint defaults
 				globals: {
@@ -98,18 +103,26 @@ module.exports = function(grunt) {
 	            files: {
 	                'dist/library.html' : ['src/library.html'],
 	                'dist/todo.html' : ['src/todo.html'],
+	                'dist/TodoMVC.html' : ['src/TodoMVC.html'],
+	                'dist/libs/backbone.marionette.js' : ['libs/backbone.marionette.js'], // temp solution
 	                'dist/libs/backbone.localStorage.js' : ['libs/backbone.localStorage.js'], // temp solution
 	                'dist/libs/jquery-dateFormat.js' : ['libs/jquery-dateFormat.js'], // temp solution
 	                'dist/libs/jquery-ui-1.11.4.custom/jquery-ui.js' : ['libs/jquery-ui-1.11.4.custom/jquery-ui.js'], // temp solution
+	                'dist/js/base.js' : ['src/js/base.js'], // temp solution
 	                'dist/js/library_app.js' : ['src/js/library_app.js'], // temp solution
 	                'dist/js/todo_app.js' : ['src/js/todo_app.js'], // temp solution
+	                'dist/js/TodoMVC_app.js' : ['src/js/TodoMVC_app.js'], // temp solution
 	                'dist/js/views/book.js' : ['src/js/views/book.js'], // temp solution
 	                'dist/js/views/library.js' : ['src/js/views/library.js'], // temp solution
 	                'dist/js/views/todo_app.js' : ['src/js/views/todo_app.js'], // temp solution
 	                'dist/js/views/todos.js' : ['src/js/views/todos.js'], // temp solution
+	                'dist/js/views/TodoMVC.Layout.js' : ['src/js/views/TodoMVC.Layout.js'], // temp solution
+	                'dist/js/views/TodoMVC.TodoList.Views.js' : ['src/js/views/TodoMVC.TodoList.Views.js'], // temp solution
 	                'dist/js/routers/todo_router.js' : ['src/js/routers/todo_router.js'], // temp solution
+	                'dist/js/routers/TodoMVC.TodoList.js' : ['src/js/routers/TodoMVC.TodoList.js'], // temp solution
 	                'dist/js/models/book.js' : ['src/js/models/book.js'], // temp solution
 	                'dist/js/models/todo.js' : ['src/js/models/todo.js'], // temp solution
+	                'dist/js/models/TodoMVC.Todos.js' : ['src/js/models/TodoMVC.Todos.js'], // temp solution
 	                'dist/js/collections/library.js' : ['src/js/collections/library.js'], // temp solution
 	                'dist/js/collections/todos.js' : ['src/js/collections/todos.js'] // temp solution
 	            }

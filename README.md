@@ -79,7 +79,7 @@ To run the code, do the following:
 - Run: bower install
 - Run: grunt distribute
 - Run: npm start-todo
-- Open a web browser at: http://localhost:4711/todo.html
+- Open a web browser at: http://localhost:4711/todo.html  or TodoMVC.html (uses Marionette)
 
 #Chapter 7 - Common Problems and Solutions
 Reviews common issues you may encounter when using Backbone.js and ways of addressing them.
