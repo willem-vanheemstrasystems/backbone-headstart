@@ -106,7 +106,7 @@ module.exports = function(grunt) {
 	                'dist/js/views/book.js' : ['src/js/views/book.js'], // temp solution
 	                'dist/js/views/library.js' : ['src/js/views/library.js'], // temp solution
 	                'dist/js/views/todo_app.js' : ['src/js/views/todo_app.js'], // temp solution
-	                'dist/js/views/todo.js' : ['src/js/views/todo.js'], // temp solution
+	                'dist/js/views/todos.js' : ['src/js/views/todos.js'], // temp solution
 	                'dist/js/routers/todo_router.js' : ['src/js/routers/todo_router.js'], // temp solution
 	                'dist/js/models/book.js' : ['src/js/models/book.js'], // temp solution
 	                'dist/js/models/todo.js' : ['src/js/models/todo.js'], // temp solution
