@@ -11,6 +11,8 @@ Uses: https://github.com/jeromegn/Backbone.localStorage
 #Chapter 01 Prelude
 Introduces Backbone.
 
+See also the Backbone wiki at https://github.com/documentcloud/backbone/wiki/
+
 To run the code, do the following:
 - Inside the DBACh01 project directory run: npm install
 - Run: bower install
@@ -72,6 +74,8 @@ https://www.youtube.com/channel/UCLYMAj4tAAh5iVDNHXpDm3Q
 #Chapter 6 - Backbone Extensions
 Describes Backbone.Marionette and Thorax, two extension frameworks which add features to Backbone.js that are useful for developing large-scale applications.
 
+##Marionette
+
 Revisits the Todo Application of Chapter 4, using Marionette's Regions.
 
 To run the code, do the following:
@@ -81,8 +85,79 @@ To run the code, do the following:
 - Run: npm start-todo
 - Open a web browser at: http://localhost:4711/todo.html  or TodoMVC.html (uses Marionette)
 
+##Thorax
+
+Thorax makes an opinionated decision to use Handlebars as its templating solution. Thorax.View differs from Backbone.View in that there is no options object. All arguments passed to the constructor become properties of the view, which in turn become available to the template. The view helper allows you to embed other views within a view.
+
 #Chapter 7 - Common Problems and Solutions
 Reviews common issues you may encounter when using Backbone.js and ways of addressing them.
+
+##Working With Nested Views (i.e. Subviews)
+
+''''
+this.children = {};
+this.child = new Backbone.View();
+this.children[this.child.cid] = this.child;
+''''
+
+Using cids (client id's) allows for direct references to views. The Backbone extensions Marionette and Thorax provide logic for nesting views, and rendering collections where each item has an associated view. 
+
+##Managing Models In Nested Views
+
+One approach is to make sure each child model has a ‘parent’ attribute. This way you can traverse the nesting first up to the parent and then down to any siblings that you know of.
+
+This allows you to reach the parent model in any child model function through this.parent.
+
+##Rendering A Parent View From A Child View
+
+The parent view can bind notifications on the child view to know when the event has occurred. It can then render itself. The child will trigger a “somethingHappened” event and the parent’s render function will be called.
+
+##Disposing View Hierarchies
+
+A close() method for views is implemented which disposes of a view when it is no longer needed or needs to be reset.
+
+##Rendering View Hierarchies
+
+In the Backbone.Marionette framework is a type of view called a CompositeView. It can render a model and a collection within the same view. It can render a single model with a template. It can also take a collection from that model and for each model in that collection, render a view.
+
+See http://jsfiddle.net/derickbailey/AdWjU/
+
+##Working With Nested Models Or Collections
+
+There are also a number of Backbone plugins which can help with nested data structures, such as Backbone Relational. This plugin handles one-to-one, one-to-many and many-to-one relations between models for Backbone and has some excellent documentation.
+
+##Better Model Property Validation
+
+Use [@gfranko](http://github.com/@franko)’s Backbone.validateAll plugin, specifically created to validate specific Model properties (or form fields) without worrying about the validation of any other Model properties (or form fields).
+
+##Avoiding Conflicts With Multiple Backbone Versions
+
+var Backbone19 = Backbone.noConflict();
+// Backbone19 refers to the most recently loaded version,
+// and `window.Backbone` will be restored to the previously
+// loaded version
+
+##Building Model And View Hierarchies
+
+Underscore’s extend method is called to add the parent class’s methods to the new child class. Underscore’s extend method is called twice to add the static and instance methods to the child class
+
+Extend one View using another:
+
+''''
+var Panel = Backbone.View.extend({});
+
+var PanelAdvanced = Panel.extend({});
+''''
+
+When used appropriately, Underscore’s extend method can save a great deal of time and effort writing redundant code.
+
+Backbone-Super by Lukas Olson adds a *super* method to Backbone.Model.
+
+##Event Aggregators And Mediators
+
+The core idea of the **Event Aggregator**, according to Martin Fowler, is to channel multiple event sources through a single object so that other objects needing to subscribe to the events don’t need to know about every event source – it’s built into the Backbone object directly. An event aggregator facilitates a “fire and forget” model of communication. jQuery’s 'on' method is an example of an event aggregator.
+
+A **Mediator** is an object that coordinates interactions (logic and behavior) between multiple objects. It makes decisions on when to call which objects, based on the actions (or inaction) of other objects and input. Its purpose is to control the workflow between objects. A mediator, though, might use events to make decisions, but it is definitely not “fire and forget”. A wizard interface is a good example of a Mediator. There are multiple views that facilitate the entire workflow of the wizard. Rather than tightly coupling the view together by having them reference each other directly, we can decouple them and more explicitly model the workflow between them by introducing a mediator.
 
 #Chapter 8 - Modular Development
 Looks at how AMD modules and RequireJS can be used to modularize your code.
