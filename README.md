@@ -162,6 +162,45 @@ A **Mediator** is an object that coordinates interactions (logic and behavior) b
 #Chapter 8 - Modular Development
 Looks at how AMD modules and RequireJS can be used to modularize your code.
 
+##Organizing modules with RequireJS and AMD
+
+RequireJS implements the Asynchronous Module Definition (AMD) Specification which defines a method for writing modular code and managing dependencies.
+
+Example of an AMD module (compatible with RequireJS):
+
+''''
+// A module ID has been omitted here to make the module anonymous
+
+define(function(require){
+        // module definition function
+    // dependencies (foo and bar) are defined as local vars
+    var foo = require('foo'),
+        bar = require('bar');
+    // return a value that defines the module export
+    // (i.e the functionality we want to expose for consumption)
+    // create your module here
+    var myModule = {
+        doStuff:function(){
+            console.log('Yay! Stuff');
+        }
+    }
+    return myModule;
+});
+''''
+
+See also 'Writing Modular JS' at http://addyosmani.com/writing-modular-js/
+
+##Stock application for a manager of a shop.
+
+To demonstrate use of RequireJS and AMD. Source from https://github.com/javascript-playground/backbone-require-example
+
+To run the code, do the following:
+- Inside the DBACh08 project directory run: npm install
+- Run: bower install
+- Run: grunt distribute
+- Run: npm start-stock
+- Open a web browser at: http://localhost:4711/stock.html
+
 #Chapter 9 - Exercise 3: Todos - Your First Modular Backbone + RequireJS App
 Takes you through rewriting the app created in Exercise 1 to be more modular with the help of RequireJS.
 
