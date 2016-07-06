@@ -379,7 +379,8 @@ TodoMVC.module('TodoList', function(TodoList, App, Backbone, Marionette, $, _) {
   paths: {
     'jquery': 'vendor/jquery/jquery',
     'underscore': 'vendor/underscore/underscore',
-    'backbone': 'vendor/backbone/backbone'
+    'backbone': 'vendor/backbone/backbone',
+    'text': 'libs/require/text'
   },
   shim: {
 	jquery: {
@@ -556,8 +557,9 @@ app.LibraryView = Backbone.View.extend({
   [ "underscore",
     "backbone",
     "js/views/stockitemcollectionview",
-    "js/collections/stockcart"
-  ], function(_, Backbone, ItemCollectionView, Cart) {
+    "js/collections/stockcart",
+    "text!templates/stockView.html"
+  ], function(_, Backbone, ItemCollectionView, Cart, stockView) {
   var CartCollectionView = Backbone.View.extend({
     el: "body",
     events: {

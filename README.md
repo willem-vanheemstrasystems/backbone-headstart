@@ -203,6 +203,8 @@ To run the code, do the following:
 
 See also https://cdnjs.com/libraries/backbone.js/tutorials/organizing-backbone-using-modules
 
+RequireJS has a special plugin called text.js which is used to load in text file dependencies. We use it to load in template files. When the text! prefix is used for a dependency, RequireJS will automatically load the text plugin and treat the dependency as a text resource.
+
 #Chapter 9 - Exercise 3: Todos - Your First Modular Backbone + RequireJS App
 Takes you through rewriting the app created in Exercise 1 to be more modular with the help of RequireJS.
 
