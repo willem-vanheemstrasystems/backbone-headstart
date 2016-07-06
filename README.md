@@ -201,8 +201,14 @@ To run the code, do the following:
 - Run: npm start-stock
 - Open a web browser at: http://localhost:4711/stock.html
 
+See also https://cdnjs.com/libraries/backbone.js/tutorials/organizing-backbone-using-modules
+
 #Chapter 9 - Exercise 3: Todos - Your First Modular Backbone + RequireJS App
 Takes you through rewriting the app created in Exercise 1 to be more modular with the help of RequireJS.
+
+
+
+
 
 #Chapter 10 - Paginating Backbone Requests & Collections
 Walks through how to use the Backbone.Paginator plugin to paginate data for your Collections.
