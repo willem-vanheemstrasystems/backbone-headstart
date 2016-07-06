@@ -215,6 +215,7 @@ A command-line optimization tool for RequireJS projects called r.js (Optimizer) 
 #Chapter 9 - Exercise 3: Todos - Your First Modular Backbone + RequireJS App
 Takes you through rewriting the app created in Exercise 1 to be more modular with the help of RequireJS.
 
+Source can be found at https://github.com/addyosmani/backbone-fundamentals/tree/gh-pages/practicals/modular-todo-app
 
 
 
