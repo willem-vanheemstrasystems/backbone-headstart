@@ -7,7 +7,7 @@ require.config({
     'text': 'libs/require/text'
   },
   shim: {
-	jquery: {
+	'jquery': {
       exports: '$'
     },
     'underscore': {

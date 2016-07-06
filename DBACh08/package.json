@@ -6,6 +6,7 @@
   "scripts": {
     "pre-install": "npm install -g grunt-cli",
     "post-install": "bower install",
+    "build": "node tools/r.js -o tools/build.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-todo": "node servers/todo-server.js",
     "start-library": "node servers/library-server.js",
@@ -20,7 +21,8 @@
     "express": "^4.14.0",
     "method-override": "^2.3.6",
     "mongoose": "^4.5.3",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "requirejs": "^2.2.0"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
