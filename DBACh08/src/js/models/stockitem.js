@@ -1,5 +1,5 @@
-define(["vendor/underscore/underscore",
-        "vendor/backbone/backbone"], 
+define(["underscore",
+        "backbone"], 
 		function(_, Backbone) {
   var Item = Backbone.Model.extend({
     defaults: {

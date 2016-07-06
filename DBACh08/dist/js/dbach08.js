@@ -5,15 +5,27 @@
 		var _gaq=[['_setAccount','UA-31081062-1'],['_trackPageview']];(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';s.parentNode.insertBefore(g,s);}(document,'script'));
 	}
 })( window );
-;// js/collections/library.js
+;//Filename: boilerplate.js
+
+define([
+  // These are path alias that we configured in our bootstrap
+  'jquery',     // vendor/jquery/jquery
+  'underscore', // vendor/underscore/underscore
+  'backbone'    // vendor/backbone/backbone
+], function($, _, Backbone){
+  // Above we have passed in jQuery, Underscore and Backbone
+  // They will not be accessible in the global scope
+  return {};
+  // What we return here will be used by other modules
+});;// js/collections/library.js
 
 var app = app || {};
 
 app.Library = Backbone.Collection.extend({
     model: app.Book,
     url: '/api/books'
-});;define(["vendor/underscore/underscore",
-        "vendor/backbone/backbone", 
+});;define(["underscore",
+        "backbone", 
         "js/models/stockitem"], 
         function(_, Backbone, Item) {
   var Cart = Backbone.Collection.extend({
@@ -154,8 +166,8 @@ app.Book = Backbone.Model.extend({
         response.id = response._id;
         return response;
     }
-});;define(["vendor/underscore/underscore",
-        "vendor/backbone/backbone"], 
+});;define(["underscore",
+        "backbone"], 
 		function(_, Backbone) {
   var Item = Backbone.Model.extend({
     defaults: {
@@ -365,14 +377,20 @@ TodoMVC.module('TodoList', function(TodoList, App, Backbone, Marionette, $, _) {
 });;require.config({
   baseUrl: "../", // generally the same directory as the script used in a data-main attribute for the top level script
   paths: {
-    'jquery': 'vendor/jquery/jquery'
+    'jquery': 'vendor/jquery/jquery',
+    'underscore': 'vendor/underscore/underscore',
+    'backbone': 'vendor/backbone/backbone'
   },
   shim: {
-    'vendor/underscore/underscore': {
+	jquery: {
+      exports: '$'
+    },
+    'underscore': {
+      deps: ["jquery"],
       exports: '_'
     },
-    'vendor/backbone/backbone': {
-      deps: ["vendor/underscore/underscore", "jquery"],
+    'backbone': {
+      deps: ["underscore", "jquery"],
       exports: 'Backbone'
     }
   }
@@ -387,8 +405,8 @@ var items = [
 ];
 require(
   [ "jquery",
-    "vendor/underscore/underscore",
-    "vendor/backbone/backbone",
+    "underscore",
+    "backbone",
     "js/views/stockcartcollectionview"
   ],
   function($, _, Backbone, CartCollectionView) {
@@ -535,8 +553,8 @@ app.LibraryView = Backbone.View.extend({
         this.collection.create( formData );
     }
 });;define(
-  [ "vendor/underscore/underscore",
-    "vendor/backbone/backbone",
+  [ "underscore",
+    "backbone",
     "js/views/stockitemcollectionview",
     "js/collections/stockcart"
   ], function(_, Backbone, ItemCollectionView, Cart) {
@@ -565,8 +583,8 @@ app.LibraryView = Backbone.View.extend({
     }
   });
   return CartCollectionView;
-});;define(["vendor/underscore/underscore", 
-        "vendor/backbone/backbone", 
+});;define(["underscore", 
+        "backbone", 
         "js/models/stockitem", 
         "js/views/stockitemview"], 
         function(_, Backbone, Item, ItemView) {
@@ -615,9 +633,8 @@ app.LibraryView = Backbone.View.extend({
   });
   return ItemCollectionView;
 });
-;define(["vendor/underscore/underscore",
-        "vendor/backbone/backbone"], 
-		function(_, Backbone) {
+;define(["backbone"], 
+		function(Backbone) {
   var ItemView = Backbone.View.extend({
     tagName: "div",
     className: "item-wrap",

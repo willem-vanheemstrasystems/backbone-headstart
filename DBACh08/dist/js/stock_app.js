@@ -1,14 +1,20 @@
 require.config({
   baseUrl: "../", // generally the same directory as the script used in a data-main attribute for the top level script
   paths: {
-    'jquery': 'vendor/jquery/jquery'
+    'jquery': 'vendor/jquery/jquery',
+    'underscore': 'vendor/underscore/underscore',
+    'backbone': 'vendor/backbone/backbone'
   },
   shim: {
-    'vendor/underscore/underscore': {
+	jquery: {
+      exports: '$'
+    },
+    'underscore': {
+      deps: ["jquery"],
       exports: '_'
     },
-    'vendor/backbone/backbone': {
-      deps: ["vendor/underscore/underscore", "jquery"],
+    'backbone': {
+      deps: ["underscore", "jquery"],
       exports: 'Backbone'
     }
   }
@@ -23,8 +29,8 @@ var items = [
 ];
 require(
   [ "jquery",
-    "vendor/underscore/underscore",
-    "vendor/backbone/backbone",
+    "underscore",
+    "backbone",
     "js/views/stockcartcollectionview"
   ],
   function($, _, Backbone, CartCollectionView) {

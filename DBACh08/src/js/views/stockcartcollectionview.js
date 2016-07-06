@@ -1,6 +1,6 @@
 define(
-  [ "vendor/underscore/underscore",
-    "vendor/backbone/backbone",
+  [ "underscore",
+    "backbone",
     "js/views/stockitemcollectionview",
     "js/collections/stockcart"
   ], function(_, Backbone, ItemCollectionView, Cart) {

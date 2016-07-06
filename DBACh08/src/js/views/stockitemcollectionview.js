@@ -1,5 +1,5 @@
-define(["vendor/underscore/underscore", 
-        "vendor/backbone/backbone", 
+define(["underscore", 
+        "backbone", 
         "js/models/stockitem", 
         "js/views/stockitemview"], 
         function(_, Backbone, Item, ItemView) {

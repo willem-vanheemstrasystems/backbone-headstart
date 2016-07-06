@@ -1,5 +1,5 @@
-define(["vendor/underscore/underscore",
-        "vendor/backbone/backbone", 
+define(["underscore",
+        "backbone", 
         "js/models/stockitem"], 
         function(_, Backbone, Item) {
   var Cart = Backbone.Collection.extend({
