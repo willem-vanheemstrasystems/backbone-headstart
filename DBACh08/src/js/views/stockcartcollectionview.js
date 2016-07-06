@@ -4,9 +4,12 @@ define(
     "js/views/stockitemcollectionview",
     "js/collections/stockcart",
     "text!templates/stockView.html"
-  ], function(_, Backbone, ItemCollectionView, Cart, stockView) {
+  ], function(_, Backbone, ItemCollectionView, Cart, stockViewTemplate) {
   var CartCollectionView = Backbone.View.extend({
     el: "body",
+    // Our template.
+    //OLD stockViewTemplate: _.template( $('#stockViewTemplate').html() ),
+    stockViewTemplate: _.template(stockViewTemplate),
     events: {
       "submit #add": "addItem",
       "submit #filter": "filterItems",
