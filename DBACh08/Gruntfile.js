@@ -105,11 +105,13 @@ module.exports = function(grunt) {
 	                'dist/stock.html' : ['src/stock.html'],	                
 	                'dist/todo.html' : ['src/todo.html'],
 	                'dist/TodoMVC.html' : ['src/TodoMVC.html'],
+	                'dist/templates/stockView.html' : ['src/templates/stockView.html'],
 	                'dist/libs/backbone.marionette.js' : ['libs/backbone.marionette.js'], // temp solution
 	                'dist/libs/backbone.localStorage.js' : ['libs/backbone.localStorage.js'], // temp solution
 	                'dist/libs/jquery-dateFormat.js' : ['libs/jquery-dateFormat.js'], // temp solution
 	                'dist/libs/jquery-ui-1.11.4.custom/jquery-ui.js' : ['libs/jquery-ui-1.11.4.custom/jquery-ui.js'], // temp solution
 	                'dist/libs/require.js' : ['libs/require.js'], // temp solution
+	                'dist/libs/require/text.js' : ['libs/require/text.js'], // temp solution
 	                'dist/js/base.js' : ['src/js/base.js'], // temp solution
 	                'dist/js/library_app.js' : ['src/js/library_app.js'], // temp solution
 	                'dist/js/stock_app.js' : ['src/js/stock_app.js'], // temp solution

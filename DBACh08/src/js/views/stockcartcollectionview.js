@@ -2,8 +2,9 @@ define(
   [ "underscore",
     "backbone",
     "js/views/stockitemcollectionview",
-    "js/collections/stockcart"
-  ], function(_, Backbone, ItemCollectionView, Cart) {
+    "js/collections/stockcart",
+    "text!templates/stockView.html"
+  ], function(_, Backbone, ItemCollectionView, Cart, stockView) {
   var CartCollectionView = Backbone.View.extend({
     el: "body",
     events: {
