@@ -205,6 +205,13 @@ See also https://cdnjs.com/libraries/backbone.js/tutorials/organizing-backbone-u
 
 RequireJS has a special plugin called text.js which is used to load in text file dependencies. We use it to load in template files. When the text! prefix is used for a dependency, RequireJS will automatically load the text plugin and treat the dependency as a text resource.
 
+
+A command-line optimization tool for RequireJS projects called r.js (Optimizer) is available to help with this workflow. It offers a number of capabilities, including:
+
+- Concatenating specific scripts and minifying them using external tools such as UglifyJS (which is used by default) or Google’s Closure Compiler for optimal browser delivery, whilst preserving the ability to dynamically load modules
+- Optimizing CSS and stylesheets by inlining CSS files imported using @import, stripping out comments, etc.
+- The ability to run AMD projects in both Node and Rhino
+
 #Chapter 9 - Exercise 3: Todos - Your First Modular Backbone + RequireJS App
 Takes you through rewriting the app created in Exercise 1 to be more modular with the help of RequireJS.
 
