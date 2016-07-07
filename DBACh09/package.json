@@ -1,0 +1,39 @@
+{
+  "name": "dbach09",
+  "version": "1.0.0",
+  "description": "Developing Backbone Applications, Chapter 9",
+  "main": "servers/todo-server.js",
+  "scripts": {
+    "pre-install": "npm install -g grunt-cli",
+    "post-install": "bower install",
+    "build": "node tools/r.js -o tools/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-todo": "node servers/todo-server.js",
+    "start-library": "node servers/library-server.js",
+    "start-stock": "node servers/stock-server.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "bower": "^1.7.9",
+    "errorhandler": "^1.4.3",
+    "express": "^4.14.0",
+    "method-override": "^2.3.6",
+    "mongoose": "^4.5.3",
+    "path": "^0.12.7",
+    "requirejs": "^2.2.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-bower-install-simple": "^1.2.3",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-qunit": "^1.2.0",
+    "grunt-contrib-uglify": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-processhtml": "^0.4.0",
+    "qunitjs": "^2.0.0"
+  }
+}
